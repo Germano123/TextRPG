@@ -1,4 +1,4 @@
-from Inventory import Inventory
+from inventory import Inventory
 
 class Player:
     def __init__(self, name):
@@ -23,6 +23,12 @@ class Player:
             if(_inventory.RemoveItem(itemName, quantity)):
                 return True
         return False
+
+    def Get_ItemQuantity(self, itemName):
+      quantity = 0
+      for _inventory in self.__inventories:
+        quantity += _inventory.Get_ItemQuantity(itemName)
+      return quantity
 
     def Get_AllItens(self):
         itens_list = []

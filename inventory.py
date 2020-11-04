@@ -12,18 +12,14 @@ class Inventory:
         self.__slots.sort(key = ByName)
         
         #reagrupre quantity
-        reorder = []
-        extra = 0
-        lastItem = ""
-        for _item in self.__slots:
-            if(_item.Get_Quantity() < _item.Get_Stack()):
-                lastItem = _item.Get_Name()
-                extra += _item.Get_Quantity()
-            if(lastItem == _item.Get_Name() and extra > 0):
-                
-            else:
-                extra = 0
-        return
+        # to do
+
+    def Get_ItemQuantity(self, itemName):
+      quantity = 0  
+      for _item in self.__slots:
+        if(_item.Get_Name() == itemName):
+          quantity += _item.Get_Quantity()
+      return quantity
 
     def AddItem(self, item):
         # check each item in inventory
